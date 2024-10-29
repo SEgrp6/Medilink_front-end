@@ -15,7 +15,7 @@
 
     <div class="header">
         <div class="logo"><a href="">
-                <img src="resources/logo.png" alt="Logo Image">
+                <img src="/Resources/logo.png" alt="Logo Image">
                 <h2>Medi-link</h2>
             </a></div>
         <div class="nav-bar">
@@ -72,13 +72,13 @@
                         <button onclick="changeMonth(1)">&#10095;</button>
                     </div>
                     <div class="days-of-week">
-                        <div>Sun</div>
-                        <div>Mon</div>
-                        <div>Tue</div>
-                        <div>Wed</div>
-                        <div>Thu</div>
-                        <div>Fri</div>
-                        <div>Sat</div>
+                        <p>Sun</p>
+                        <p>Mon</p>
+                        <p>Tue</p>
+                        <p>Wed</p>
+                        <p>Thu</p>
+                        <p>Fri</p>
+                        <p>Sat</p>
                     </div>
                     <div class="days" id="days"></div>
                 </div>
@@ -90,7 +90,7 @@
 
                         <h2>Daily/Weekly Logs</h2>
                         <form>
-                            <p>What Symptom are you experiencing today?</p>
+                            <p>What Symptoms are you experiencing today?</p>
 
                             <!-- One-Sided Weakness -->
                             <div class="symptom-group">
@@ -105,7 +105,7 @@
 
                             <!-- Redness -->
                             <div class="symptom-group">
-                                <label>Redness</label>
+                                <label>Redness around surgical-site</label>
                                 <div class="choice-group">
                                     <input type="radio" name="redness" id="redness_yes" value="yes">
                                     <label for="redness_yes">Yes</label>
@@ -116,7 +116,7 @@
 
                             <!-- Discharge -->
                             <div class="symptom-group">
-                                <label>Discharge</label>
+                                <label>Discharge from surgical-site</label>
                                 <div class="choice-group">
                                     <input type="radio" name="discharge" id="discharge_yes" value="yes">
                                     <label for="discharge_yes">Yes</label>
@@ -124,8 +124,7 @@
                                     <label for="discharge_no">No</label>
                                 </div>
 
-                                <!-- Discharge Color (if "Yes") -->
-                                <!-- Discharge Color (if "Yes") -->
+                               
                                 <div class="choice-group discharge-color">
                                     <label class="color-label">Color:</label>
                                     <input type="radio" name="discharge_color" id="discharge_clear" value="clear">
@@ -140,7 +139,7 @@
 
                             <!-- Inflammation -->
                             <div class="symptom-group">
-                                <label>Inflammation</label>
+                                <label>Inflammation around the surgical site</label>
                                 <div class="choice-group">
                                     <input type="radio" name="inflammation" id="inflammation_yes" value="yes">
                                     <label for="inflammation_yes">Yes</label>
@@ -162,7 +161,8 @@
 
                             <!-- Headaches -->
                             <div class="symptom-group">
-                                <label>Headaches</label>
+                                <label>Are you experiencing headaches?
+                                </label>
                                 <div class="choice-group">
                                     <input type="radio" name="headaches" id="headaches_yes" value="yes">
                                     <label for="headaches_yes">Yes</label>
@@ -173,7 +173,7 @@
 
                             <!-- General Body Weakness -->
                             <div class="symptom-group">
-                                <label>General Body Weakness</label>
+                                <label> Do you have General Body Weakness?</label>
                                 <div class="choice-group">
                                     <input type="radio" name="body_weakness" id="weakness_none" value="none">
                                     <label for="weakness_none">None</label>
@@ -188,7 +188,7 @@
 
                             <!-- Pain Level Scale -->
                             <div class="symptom-group">
-                                <label for="pain-level">Pain Level (1-10):</label>
+                                <label for="pain-level"> Rate your Pain Level :</label>
                                 <input type="range" id="pain-level" name="pain_level" min="1" max="10" value="1">
                                 <span id="pain-level-value">1</span>
                             </div>

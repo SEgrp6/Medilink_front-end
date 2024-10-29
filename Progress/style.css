@@ -219,7 +219,14 @@
     text-align: center;
     cursor: pointer;
 }
-
+.days-of-week{
+    background-color: rgba(165, 169, 184, 0.904);
+    color: rgb(22, 17, 68);
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 600;
+}
 .days div:hover {
     background-color: rgba(165, 169, 184, 0.5);
 }
@@ -277,7 +284,7 @@ form p {
 
 .symptom-group {
     padding: 10px;
-    border: 1px solid rgb(22, 17, 68);
+    border: .5px solid rgb(22, 17, 68);
     margin-bottom: 15px;
     border-radius: 30px;
     
@@ -333,7 +340,7 @@ label {
 
 #pain-level-value {
     font-weight: bold;
-    color: rgb(22, 17, 68);
+    color: rgb(14, 10, 53);
     margin-left: 10px;
 }
 
