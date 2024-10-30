@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLink - Login & Signup</title>
+    <link rel="stylesheet" href="login.css"> <!-- Link to external CSS for styling -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Boxicons for icons -->
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="logo"><a href="">
+            <img src="/Resources/logo.png" alt="Logo Image">
+            <h2>Medi-link</h2>
+        </a></div>
+        <div class="nav-bar">
+            <a href="">Home</a>
+            <a href="">About Us</a>
+            <a href="">Dashboard </a>
+        </div>
+        <div class="profile"><a href="">
+            <i class='bx bx-user-circle'></i>
+            <h3> Profile</h3>
+        </a></div>
+    </div>
+
+    <!-- Login/Signup Container -->
+    <div class="container" id="authContainer">
+        <h2 id="formTitle">Login to MediLink</h2>
+        <form id="authForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <a href="#" id="forgotPassword" class="forgot-password">Forgot Password?</a>
+            <div class="login-button">
+                <a  class="login-button" href="Progress/progress.html">Patient</a>
+            <a  class="login-button" href="">Doctor</a>
+            </div>
+            
+            
+        </form>
+        <div class="toggle">
+            <p id="toggleText">Don't have an account? <a href="#" id="toggleLink">Sign up here</a></p>
+        </div>
+    </div>
+
+    
+    <div class="overlay" id="overlay"></div>
+    <div class="terms-modal" id="termsModal">
+        <h3>Terms and Conditions</h3>
+        <p>**MediLink Terms and Conditions**</p>
+        <p>Welcome to MediLink! By accessing or using our platform, you agree to comply with and be bound by the following terms and conditions. Please read them carefully before using our services.</p>
+
+        <h4>1. **Acceptance of Terms**</h4>
+        <p>By registering an account or using MediLink services, you acknowledge that you have read, understood, and agree to be bound by these terms and conditions. If you do not agree to these terms, you may not use the MediLink services.</p>
+
+        <h4>2. **Description of Services**</h4>
+        <p>MediLink provides healthcare-related tools to assist in monitoring, managing, and improving the quality of healthcare. Our services include, but are not limited to, patient-doctor communication, healthcare tracking, and appointment management. These services are for informational purposes only and are not intended to be a substitute for professional medical advice, diagnosis, or treatment.</p>
+
+        <button class="close-btn" id="closeTermsBtn">Close</button>
+    </div>
+
+   
+    <footer>
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <a href="#"><i class='bx bxs-phone'></i> 0798765432</a>
+            <a href="#"><i class='bx bxl-gmail'></i> info@medilink.org</a>
+            <a href="#"><i class='bx bx-current-location'></i> Ole-Sangale link rd</a>
+        </div>
+        <div class="copyright">
+            <h2>Copyright</h2>
+            <p>&copy; 2024 MediLink. All rights reserved.</p>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class='bx bxl-facebook'></i> Facebook</a>
+            <a href="#"><i class='bx bxl-twitter'></i> Twitter</a>
+            <a href="#"><i class='bx bxl-instagram'></i> Instagram</a>
+            <a href="#"><i class='bx bxl-linkedin'></i> LinkedIn</a>
+        </div>
+    </footer>
+
+    
+    <script>
+        document.getElementById('toggleLink').addEventListener('click', function (e) {
+            e.preventDefault();
+            toggleForm();
+        });
+
+        function toggleForm() {
+            const formTitle = document.getElementById('formTitle');
+            const authForm = document.getElementById('authForm');
+            const authButton = document.getElementById('authButton');
+            const toggleText = document.getElementById('toggleText');
+
+            if (formTitle.textContent === 'Login to MediLink') {
+                formTitle.textContent = 'Sign up for MediLink';
+                authForm.innerHTML = `
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="email" id="signupEmail" placeholder="Email" required>
+                    <input type="password" id="signupPassword" placeholder="Password" required>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <div class="terms-acceptance">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <a href="#" id="viewTerms">terms and conditions</a></label>
+                    </div>
+                    <button type="submit" id="authButton">Sign Up</button>
+                `;
+                toggleText.innerHTML = 'Already have an account? <a href="#" id="toggleLink">Login here</a>';
+            } else {
+                formTitle.textContent = 'Login to MediLink';
+                authForm.innerHTML = `
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <a href="#" id="forgotPassword" class="forgot-password">Forgot Password?</a>
+                    <button type="submit" id="authButton">Login</button>
+                `;
+                toggleText.innerHTML = "Don't have an account? <a href=\"#\" id=\"toggleLink\">Sign up here</a>";
+            }
+
+            
+            document.getElementById('toggleLink').addEventListener('click', function (e) {
+                e.preventDefault();
+                toggleForm();
+            });
+
+            
+            const viewTermsLink = document.getElementById('viewTerms');
+            const closeTermsBtn = document.getElementById('closeTermsBtn');
+
+            if (viewTermsLink) {
+                viewTermsLink.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.getElementById('termsModal').style.display = 'block';
+                    document.getElementById('overlay').style.display = 'block';
+                });
+            }
+            if (closeTermsBtn) {
+                closeTermsBtn.addEventListener('click', function () {
+                    document.getElementById('termsModal').style.display = 'none';
+                    document.getElementById('overlay').style.display = 'none';
+                });
+            }
+        }
+
+        // Attach initial event listeners
+        const forgotPasswordLink = document.getElementById('forgotPassword');
+        if (forgotPasswordLink) {
+            forgotPasswordLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                alert('Forgot Password feature is under construction!');
+            });
+        }
+
+        reattachEventListeners();
+
+        function reattachEventListeners() {
+            const forgotPasswordLink = document.getElementById('forgotPassword');
+            if (forgotPasswordLink) {
+                forgotPasswordLink.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    alert('Forgot Password feature is under construction!');
+                });
+            }
+        }
+    </script>
+</body>
+</html>

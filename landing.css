@@ -26,6 +26,7 @@ body {
 .header .logo a img{
     width:90px;
     height:90px;
+    border-radius:40px;
     padding:5px;
 }
 .header .logo a h2{
@@ -37,9 +38,8 @@ body {
 }
 
 .header .nav-bar{
-    display:flex;
+    display: flex;
     justify-content: space-between;
-    
     /* padding:20px;
     margin:10px; */
 
@@ -68,7 +68,7 @@ body {
     font-size: 20px;
     font-weight: 200;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    gap: 10px; 
+    gap: 10px; /* Space between icon and text */
 }
 
 .header .profile a i {

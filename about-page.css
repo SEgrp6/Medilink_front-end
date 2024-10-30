@@ -11,7 +11,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: url('image1.jpg') no-repeat center center fixed;
+    background: url('/Resources/images/doctor.jpg') no-repeat center center fixed;
     background-size: cover;
     animation: slideshow 20s infinite;
     position: relative;
@@ -20,19 +20,19 @@ body {
 /* Slideshow Animation */
 @keyframes slideshow {
     0% {
-        background-image: url('image1.jpg');
+        background-image: url('/Resources/images/hosp.jpg');
     }
     25% {
-        background-image: url('image2.jpg');
+        background-image: url('/Resources/images/hosp2.jpg');
     }
     50% {
-        background-image: url('image3.jpg');
+        background-image: url('/Resources/images/emergency.jpg');
     }
     75% {
-        background-image: url('image4.jpg');
+        background-image: url('Resources/images/doctor.jpg');
     }
     100% {
-        background-image: url('image5.jpg');
+        background-image: url('/Resources/images/istockphoto-855467422-612x612.jpg');
     }
 }
 
